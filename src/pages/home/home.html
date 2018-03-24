@@ -7,8 +7,16 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+	  <ion-scroll scrollY="true" direction="xy" style="height: 100vh;">
+        <ion-list >
+            <ion-item tappable *ngFor="let a of data; let index = index" (click)="edit(a.id)" >
+                {{a.judul}} 
+            </ion-item>
+        </ion-list>
+    </ion-scroll>
+    <ion-fab bottom right>
+      <button ion-fab (click) = "add()" >Add</button>
+    </ion-fab>
 </ion-content>
+
+
